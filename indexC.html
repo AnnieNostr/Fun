@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Bird Quiz</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is one of the national birds of Trinidad and Tobago?</h3>
+
+                    <button id="one">Eagle</button>
+                    <button id="two">Scarlet Ibis</button>
+                    <button id="three">Canary</button>
+
+                <script>
+		
+		    let question = document.querySelector("h3");
+                    let one = document.querySelector("#one");
+		    let two = document.querySelector("#two");
+		    let three = document.querySelector("#three");
+
+		    document.querySelector("#one").addEventListener("click", function(){
+			document.querySelector("#one").style.backgroundColor = "red";
+		    });
+		    document.querySelector("#one").addEventListener("click", function(){
+			question.append(" Incorrect!");
+		    });
+		    		
+                    document.querySelector("#two").addEventListener("click", function(){
+			document.querySelector("#two").style.backgroundColor = "green";
+                    });
+		    document.querySelector("#two").addEventListener("click", function(){
+			question.append(" Correct!");
+		    });
+
+		    document.querySelector("#three").addEventListener("click", function(){
+			document.querySelector("#three").style.backgroundColor = "red";
+                    });
+		    document.querySelector("#three").addEventListener("click", function(){
+			question.append(" Incorrect!");
+		    });
+
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h4>What is the other national bird of Trinidad and Tobago?</h4>
+		
+			<form onSubmit = "return check();">
+			<label for="answer">Answer:</label><br>
+			<input type="text" id="answer" name="answer" required><br>
+			<button type="submit" id="submit">Submit</button>
+			</form>
+
+		<script>
+
+			function check(){
+			var correctAnswer = "cocrico";
+			var inputValue = document.getElementById("answer").value;
+			var repeat = "Your answer is " + inputValue + ". The correct answer is " + correctAnswer;
+
+			if (inputValue == correctAnswer) {
+				let question2 = document.querySelector("h4");
+				question2.append("Correct!");
+				document.querySelector("#submit").style.backgroundColor = "green";
+			} else {
+				let question2 = document.querySelector("h4");
+				question2.append("Incorrect!");
+				document.querySelector("#submit").style.backgroundColor = "red";
+			}
+			
+
+			}
+
+		</script>
+            </div>
+    </body>
+</html>
+
+
+			
